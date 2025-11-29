@@ -6,7 +6,7 @@
         if (typeof interval !== "number" || interval < 5 || interval > 1000) {
             interval = 20;
         }
-        var charsets = {
+        const charsets = {
             numbers: "0123456789".split(""), alphabet: "abcdefghijklmnopqrstuvwxyz".split(""), get alphanumeric() {
                 return this.numbers.concat(this.alphabet);
             }, punctuation: ["@", "#", "$", "%", "^", "&", "*", "(", ")"], get all() {
@@ -16,25 +16,25 @@
         if (!charset || !(charset in charsets)) {
             charset = "all";
         }
-        var chars = charsets[charset];
-        var upper = uppercase === true;
-        var original = this.text();
+        const chars = charsets[charset];
+        const upper = uppercase === true;
+        const original = this.text();
         this.text("");
 
-        var randomChar = () => {
+        const randomChar = () => {
             let c = chars[Math.floor(Math.random() * chars.length)];
             return upper ? c.toUpperCase() : c;
         };
-        var arr = original.split("");
-        var len = arr.length;
-        var intervalCount = 0;
-        var revealCount = 0;
-        var magic = parseInt(duration / interval / len);
-        var self = this;
+        const arr = original.split("");
+        const len = arr.length;
+        let intervalCount = 0;
+        let revealCount = 0;
+        const magic = parseInt(duration / interval / len);
+        const self = this;
 
-        var timer = setInterval(() => {
+        const timer = setInterval(() => {
             intervalCount++;
-            var scrambled = Array.from({length: len}, () => randomChar());
+            const scrambled = Array.from({length: len}, () => randomChar());
 
             if (intervalCount % magic === 0) {
                 revealCount++;

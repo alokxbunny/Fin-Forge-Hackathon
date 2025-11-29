@@ -2,7 +2,7 @@ $(document).ready(function () {
     $(".scramble").scramble(3000, 20, "alphabet", true);
 });
 
-var tl = gsap.timeline();
+const tl = gsap.timeline();
 
 tl.to(".Loading", {
     opacity: 0,
@@ -50,7 +50,7 @@ tl.to(".Loading", {
         },
         "up"
     );
-var tl2 = gsap.timeline();
+const tl2 = gsap.timeline();
 
 document.querySelector("#explore").addEventListener("click", function () {
     tl2

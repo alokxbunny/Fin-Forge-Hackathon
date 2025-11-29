@@ -140,7 +140,7 @@ body {
     background-size: cover;
     background-position: center;
     animation: dotte 8s ease-in-out alternate infinite;
-    /* overflow: hidden; */
+    /*overflow: hidden;*/
 }
 
 #dotted > img:nth-child(1) {
